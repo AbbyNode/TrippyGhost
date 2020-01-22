@@ -8,9 +8,12 @@ public class PlayerBird : MonoBehaviour
     public float upSpeed;
     public float gravity;
 
+    private Sprite sprite;
+
     void Start()
     {
-        Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.rect.size;
+        sprite = GetComponent<SpriteRenderer>().sprite;
+        Vector2 spriteSize = sprite.rect.size;
         Vector3 screenSpawnPos = new Vector3(0 + spriteSize.x * 2, Screen.height * 0.7f, 10);
         Vector3 worldSpawnPos = Camera.main.ScreenToWorldPoint(screenSpawnPos);
         transform.position = worldSpawnPos;
@@ -19,10 +22,17 @@ public class PlayerBird : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.right * Time.deltaTime * speed;
-        transform.position += Vector3.down * Time.deltaTime * gravity;
         if (Input.touchCount > 0 || Input.GetMouseButton(0))
         {
-            transform.position += Vector3.up * Time.deltaTime * upSpeed;
+            float cameraTop = Camera.main.transform.position.y + Camera.main.orthographicSize;
+            if (transform.position.y < cameraTop - sprite.bounds.size.y)
+            {
+                transform.position += Vector3.up * Time.deltaTime * upSpeed;
+            }
+        }
+        else
+        {
+            transform.position += Vector3.down * Time.deltaTime * gravity;
         }
     }
 }

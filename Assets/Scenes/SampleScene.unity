@@ -3493,7 +3493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.65
-  upSpeed: 2.4
+  upSpeed: 1.6
   gravity: 0.8
 --- !u!60 &1476737335
 PolygonCollider2D:
