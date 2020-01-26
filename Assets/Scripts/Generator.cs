@@ -9,6 +9,7 @@ public class Generator : MonoBehaviour
     public GameObject applePrefab;
     public GameObject lemonPrefab;
     public GameObject bananaPrefab;
+    public GameObject finishLinePrefab;
 
     private float seed = 41;
 
@@ -26,13 +27,15 @@ public class Generator : MonoBehaviour
         int x = 0;
         int y = 0;
 
-        for (int i = 100; i < 10000; i += x)
+        int i;
+        for (i = 100; i < 10000; i += x)
         {
             x = GetRndInteger(300, 1000);
             Instantiate(treePrefab, new Vector3(i / scale, -2.75f, 10), Quaternion.identity);
         }
 
-        for (int j = 500; j < 10000; j += x)
+        int j;
+        for (j = 500; j < 10000; j += x)
         {
             x = GetRndInteger(100, 500);
             y = GetRndInteger(10, 310);
@@ -49,6 +52,12 @@ public class Generator : MonoBehaviour
                 Instantiate(bananaPrefab, new Vector3((j + x) / scale, 4.5f - y / scale, 10), Quaternion.identity);
             }
         }
+
+        float finishX = Mathf.Max(i / scale, j / scale);
+        Instantiate(finishLinePrefab, new Vector3(finishX, 0, 10), Quaternion.identity);
+        //GameScene.maxX = Math.max(i, j);
+        //GameScene.finishX = GameScene.maxX + 100;
+        //new FinishLine(GameScene.stage, GameScene.finishX, 0);
     }
 
     void Update()
