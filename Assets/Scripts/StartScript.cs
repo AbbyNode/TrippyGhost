@@ -17,8 +17,12 @@ public class StartScript : MonoBehaviour
         
     }
 
-    void Play()
+    public void Play()
     {
         SceneManager.LoadScene("PlayScene");
+    }
+
+    public void Quit(){
+        Application.Quit();
     }
 }
