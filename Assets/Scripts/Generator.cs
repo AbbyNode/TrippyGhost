@@ -7,6 +7,7 @@ public class Generator : MonoBehaviour
 {
     public GameObject treePrefab;
     public GameObject applePrefab;
+    public GameObject initialLemonPrefab;
     public GameObject lemonPrefab;
     public GameObject bananaPrefab;
     public GameObject finishLinePrefab;
@@ -28,6 +29,8 @@ public class Generator : MonoBehaviour
         int y = 0;
 
         int i;
+
+        Instantiate(initialLemonPrefab, new Vector3((200) / scale, 4.5f - y / scale, 10), Quaternion.identity);
         for (i = 100; i < 10000; i += x)
         {
             x = GetRndInteger(300, 1000);

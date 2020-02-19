@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinScript : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,8 @@ public class WinScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "FinishLine"){
-            SceneManager.LoadScene("WinScene");
-        }
+    public void Menu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
