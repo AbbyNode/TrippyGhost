@@ -10,7 +10,7 @@ public class PlayerBird : MonoBehaviour
 
     private Sprite sprite;
 
-    private float nourishment = 1.0f;
+    public float nourishment = 1.0f;
     private NourishmentBar nourishmentBar;
 
     public void SetNourishment(float nourishmentPoints)
@@ -50,7 +50,7 @@ public class PlayerBird : MonoBehaviour
             {
                 transform.position += Vector3.up * Time.deltaTime * upSpeed;
             }
-            nourishment -= 0.115f * Time.deltaTime;
+            nourishment -= 0.15f * Time.deltaTime;
             SetNourishment(nourishment);
         }
         else

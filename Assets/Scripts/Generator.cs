@@ -31,14 +31,14 @@ public class Generator : MonoBehaviour
         int i;
 
         Instantiate(initialLemonPrefab, new Vector3((200) / scale, 4.5f - y / scale, 10), Quaternion.identity);
-        for (i = 100; i < 10000; i += x)
+        for (i = 100; i < 50000; i += x)
         {
             x = GetRndInteger(300, 1000);
             Instantiate(treePrefab, new Vector3(i / scale, -2.75f, 10), Quaternion.identity);
         }
 
         int j;
-        for (j = 500; j < 10000; j += x)
+        for (j = 500; j < 50000; j += x)
         {
             x = GetRndInteger(100, 500);
             y = GetRndInteger(10, 310);

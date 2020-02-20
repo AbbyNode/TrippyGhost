@@ -9,15 +9,17 @@ public class CrazyCollisionScript : MonoBehaviour
     public Color red = Color.red;
     public float speed;
     public AudioSource DoomSlayerMusic;
+    public float rapidNourishment = 1.0f;
+
     void Start()
     {
-        
+        gameObject.GetComponent<PlayerBird>().nourishment = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -30,9 +32,15 @@ public class CrazyCollisionScript : MonoBehaviour
             gameObject.GetComponent<PlayerBird>().gravity = 2.5f;
             camera.GetComponent<MovingCamera>().speed = 10;
             DoomSlayerMusic.GetComponent<AudioSource>().Play();
+
+            if ((Input.touchCount > 0 || Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && rapidNourishment > 0.0f)
+            {
+                rapidNourishment -= 0.7f * Time.deltaTime;
+                gameObject.GetComponent<PlayerBird>().SetNourishment(rapidNourishment);
+            }
         }
     }
+}
 
 
     
-}
