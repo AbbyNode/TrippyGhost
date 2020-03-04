@@ -11,6 +11,11 @@ public class Generator : MonoBehaviour
     public GameObject lemonPrefab;
     public GameObject bananaPrefab;
     public GameObject finishLinePrefab;
+    public GameObject newFinishLinePrefab;
+
+    public float length = 3000f;
+    public float finishX;
+    float scale;
 
     private float seed = 41;
 
@@ -23,8 +28,7 @@ public class Generator : MonoBehaviour
 
     void Start()
     {
-        float scale = 60.0f;
-        float length = 3000;
+        scale = 60.0f;
 
         int x = 0;
         int y = 0;
@@ -57,7 +61,7 @@ public class Generator : MonoBehaviour
             }
         }
 
-        float finishX = Mathf.Max(i / scale, j / scale);
+        finishX = Mathf.Max(i / scale, j / scale);
         Instantiate(finishLinePrefab, new Vector3(finishX, 0, 10), Quaternion.identity);
         //GameScene.maxX = Math.max(i, j);
         //GameScene.finishX = GameScene.maxX + 100;

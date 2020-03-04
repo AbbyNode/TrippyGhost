@@ -506,6 +506,10 @@ MonoBehaviour:
     type: 3}
   finishLinePrefab: {fileID: 8005618298141880257, guid: 041dbab35e3cc19489b41aafe79b33b2,
     type: 3}
+  newFinishLinePrefab: {fileID: 8005618298141880257, guid: 041dbab35e3cc19489b41aafe79b33b2,
+    type: 3}
+  length: 3000
+  finishX: 0
 --- !u!4 &442386358
 Transform:
   m_ObjectHideFlags: 0
@@ -844,6 +848,7 @@ MonoBehaviour:
   speed: 0
   DoomSlayerMusic: {fileID: 1276701418}
   rapidNourishment: 1
+  generator: {fileID: 0}
 --- !u!1 &1986219687
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class CrazyCollisionScript : MonoBehaviour
     public AudioSource DoomSlayerMusic;
     public float rapidNourishment = 1.0f;
 
+    float newFinishX = 50000f;
+    
+
     void Start()
     {
         //gameObject.GetComponent<PlayerBird>().nourishment = 1.0f;
@@ -30,6 +33,10 @@ public class CrazyCollisionScript : MonoBehaviour
             gameObject.GetComponent<PlayerBird>().speed = 10;
             gameObject.GetComponent<PlayerBird>().upSpeed = 5;
             gameObject.GetComponent<PlayerBird>().gravity = 2.5f;
+            gameObject.GetComponent<Generator>().length = 40000f;
+            gameObject.GetComponent<Generator>().finishX = 10000f;
+            //Destroy(gameObject.GetComponent<Generator>().finishLinePrefab);
+            //Instantiate(gameObject.GetComponent<Generator>().newFinishLinePrefab, new Vector3(newFinishX, 0, 10), Quaternion.identity);
             camera.GetComponent<MovingCamera>().speed = 10;
             DoomSlayerMusic.GetComponent<AudioSource>().Play();
 
