@@ -17,8 +17,10 @@ public class WinScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "FinishLine"){
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Collision detected");
             SceneManager.LoadScene("WinScene");
         }
     }
