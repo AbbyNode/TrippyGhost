@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Purpose: UI for collectables
+ * Author: Egor, Abby, Natalie, Ian, Micheal, Saradvalli, Nathan
+ * Date: 2020, Mar
+ * Version: 0.1
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
