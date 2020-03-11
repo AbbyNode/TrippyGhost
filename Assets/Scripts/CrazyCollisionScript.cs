@@ -18,7 +18,6 @@ public class CrazyCollisionScript : MonoBehaviour
 
     void Start()
     {
-        //gameObject.GetComponent<PlayerBird>().nourishment = 1.0f;
     }
 
     // Update is called once per frame
