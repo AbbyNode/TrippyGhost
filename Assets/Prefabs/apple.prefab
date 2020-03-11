@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5487402319851223301}
   - component: {fileID: 64397182943702979}
   - component: {fileID: 1271316171786122711}
+  - component: {fileID: 3174494977819685197}
   m_Layer: 0
   m_Name: apple
   m_TagString: Food
@@ -149,3 +150,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nourishmentPoints: 0.1
+--- !u!114 &3174494977819685197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911529705353443548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4143a5ee7d2454c43a98a27aaa19d26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: a23cfd13ca143fb4ba0d9aa1d79d4383, type: 3}
+  doomSprite: {fileID: 21300000, guid: 1fc7f98cbfb86ab4bbe200b5e441c9b1, type: 3}

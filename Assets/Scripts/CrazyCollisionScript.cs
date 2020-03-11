@@ -32,6 +32,7 @@ public class CrazyCollisionScript : MonoBehaviour
             gameObject.GetComponent<PlayerBird>().gravity = 2.5f;
             camera.GetComponent<MovingCamera>().speed = 10;
             DoomSlayerMusic.GetComponent<AudioSource>().Play();
+            GameObject.Find("DoomStateController").GetComponent<DoomStateController>().IsDoom = true;
 
             if ((Input.touchCount > 0 || Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && rapidNourishment > 0.0f)
             {
