@@ -59,9 +59,6 @@ public class Generator : MonoBehaviour
 
         float finishX = Mathf.Max(i / scale, j / scale);
         Instantiate(finishLinePrefab, new Vector3(finishX, 0, 10), Quaternion.identity);
-        //GameScene.maxX = Math.max(i, j);
-        //GameScene.finishX = GameScene.maxX + 100;
-        //new FinishLine(GameScene.stage, GameScene.finishX, 0);
     }
 
     void Update()

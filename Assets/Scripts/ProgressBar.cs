@@ -27,11 +27,6 @@ public class ProgressBar : MonoBehaviour
 
         float height = 2f * Camera.main.orthographicSize;
         float width = height * Camera.main.aspect;
-
-        //float cameraTop = Camera.main.transform.position.y + height / 2;
-        //float cameraLeft = Camera.main.transform.position.x - width / 2;
-
-        //transform.position = new Vector3(cameraLeft + spriteSize.x / 2 + 0.05f, cameraTop - spriteSize.y / 2 - 0.05f, 100);
     }
 
     void Update()
