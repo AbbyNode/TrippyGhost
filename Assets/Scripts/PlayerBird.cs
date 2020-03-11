@@ -45,6 +45,10 @@ public class PlayerBird : MonoBehaviour
         {
             SceneManager.LoadScene("WinScene");
         }
+        else if (other.gameObject.tag == "Food")
+        {
+            ScoreScript.scoreNumber += 50;
+        }
     }
 
     public void Start()
