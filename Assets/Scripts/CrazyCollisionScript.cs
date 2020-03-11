@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Purpose: Hypes up the bird
+ * Author: Egor, Abby, Natalie, Ian, Micheal, Saradvalli, Nathan
+ * Date: 2020, Feb
+ * Version: 0.1
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

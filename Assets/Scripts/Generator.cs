@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Purpose: Create level
+ * Author: Egor, Abby, Natalie, Ian, Micheal, Saradvalli, Nathan
+ * Date: 2020, Mar
+ * Version: 0.1
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +21,7 @@ public class Generator : MonoBehaviour
 
     public int GetRndInteger(int min, int max)
     {
+        // Hash function to generate random values using a seed
         seed = (seed * 9301.0f + 49297) % 233280.0f;
         float rnd = seed / 233280.0f;
         return (int)(min + rnd * (max - min) + 0.5f);
