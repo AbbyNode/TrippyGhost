@@ -8,6 +8,7 @@ TagManager:
   - Tree
   - FinishLine
   - DoomSlayer
+  - Ground
   layers:
   - Default
   - TransparentFX

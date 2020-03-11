@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBird : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerBird : MonoBehaviour
     private Sprite sprite;
 
     public float nourishment = 1.0f;
-    private NourishmentBar nourishmentBar;
+    public NourishmentBar nourishmentBar;
 
     public void SetNourishment(float nourishmentPoints)
     {
@@ -29,7 +30,19 @@ public class PlayerBird : MonoBehaviour
         return nourishment;
     }
 
-    void Start()
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Tree")
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
+        else if (other.gameObject.tag == "FinishLine")
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+    }
+
+    public void Start()
     {
         sprite = GetComponent<SpriteRenderer>().sprite;
         Vector2 spriteSize = sprite.rect.size;
@@ -40,7 +53,7 @@ public class PlayerBird : MonoBehaviour
         nourishmentBar.SetNourishment(nourishment);
     }
 
-    void Update()
+    public void Update()
     {
         transform.position += Vector3.right * Time.deltaTime * speed;
         if ((Input.touchCount > 0 || Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && nourishment > 0.0f)

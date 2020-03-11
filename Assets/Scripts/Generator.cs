@@ -14,7 +14,7 @@ public class Generator : MonoBehaviour
 
     private float seed = 41;
 
-    private int GetRndInteger(int min, int max)
+    public int GetRndInteger(int min, int max)
     {
         seed = (seed * 9301.0f + 49297) % 233280.0f;
         float rnd = seed / 233280.0f;

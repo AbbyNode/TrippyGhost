@@ -22,7 +22,8 @@ public class StartScript : MonoBehaviour
         SceneManager.LoadScene("PlayScene");
     }
 
-    public void Quit(){
+    public void Quit()
+    {
         Application.Quit();
     }
 }
