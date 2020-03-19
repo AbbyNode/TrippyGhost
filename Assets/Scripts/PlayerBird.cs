@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerBird : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerBird : MonoBehaviour
     public float gravity;
 
     private Sprite sprite;
+    public GameObject playerTouch;
 
     public float nourishment = 1.0f;
     public NourishmentBar nourishmentBar;
@@ -67,6 +69,9 @@ public class PlayerBird : MonoBehaviour
         transform.position += Vector3.right * Time.deltaTime * speed;
         if ((Input.touchCount > 0 || Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && nourishment > 0.0f)
         {
+            float mouseX = Input.mousePosition.x;
+            float mouseY = Input.mousePosition.y;
+            StartCoroutine(showCircle(mouseX, mouseY));
             float cameraTop = Camera.main.transform.position.y + Camera.main.orthographicSize;
             if (transform.position.y < cameraTop - sprite.bounds.size.y)
             {
@@ -79,5 +84,23 @@ public class PlayerBird : MonoBehaviour
         {
             transform.position += Vector3.down * Time.deltaTime * gravity;
         }
+    }
+
+    public IEnumerator showCircle(float mouseX, float mouseY)
+    {
+        playerTouch.transform.position = new Vector3(mouseX, mouseY, 0f);
+        Image img = playerTouch.GetComponent<Image>();
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 0f);
+        playerTouch.SetActive(true);
+        for (float x = 0; x <= 1; x += 0.001f)
+        {
+            img.color = new Color(img.color.r, img.color.g, img.color.b, x);
+        }
+        yield return new WaitForSeconds(0.5f);
+        for (float x = 1; x >= 0; x -= 0.001f)
+        {
+            img.color = new Color(img.color.r, img.color.g, img.color.b, x);
+        }
+        playerTouch.SetActive(false);
     }
 }
