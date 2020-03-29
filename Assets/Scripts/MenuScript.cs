@@ -25,5 +25,6 @@ public class MenuScript : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MenuScene");
+        ScoreScript.scoreNumber = 0;
     }
 }
